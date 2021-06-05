@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :favorites, only: [:create, :show, :destroy]
+  mount LetterOpenerWeb::Engine, at: "/inbox" if Rails.env.development?
 end
