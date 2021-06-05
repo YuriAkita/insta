@@ -1,0 +1,10 @@
+<h1>お気にいり一覧</h1>
+  <div>
+    <% @favorites.each do |favorite| %>
+      <div><%= image_tag favorite.blog.image.url,size: "250x250" %>
+      <br>
+      <%= "content:"%><%= favorite.blog.content %>
+      <br>
+      <%= "user name:"%><%= favorite.blog.user.name %>
+    <% end %>
+  </div>
