@@ -1,11 +1,21 @@
+
 .create-btn {
+  color: white;
   margin-top: 20px;
   font-size: 2rem;
-  display: inline-block;
   padding: 10px 30px;
-  text-decoration: none;
-  border: 1px;
-  background: blue;
-  color: white;
-  border-radius:10px;
+  background-color: blue;
+  border: 2px solid blue;
+  color: #fff !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.create-btn:hover {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black !important;
+    border-radius: 30px;
 }
