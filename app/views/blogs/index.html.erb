@@ -9,12 +9,14 @@
         <%= "content:"%><%= blog.content %><br>
         <%= "user name:"%><%= blog.user.name %><br>
         <%= link_to '詳細', blog %>
-        
+
         <% if blog.user.id == @current_user.id %>
           <%= link_to '編集', edit_blog_path(blog) %>
         <% end %>
 
+        <% if blog.user.id == @current_user.id %>
         <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     <% end %>
 

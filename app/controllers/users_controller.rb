@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   skip_before_action :login_required, only: [:new, :create]
+  before_action :ensure_current_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -36,6 +37,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def ensure_current_user
+    if @current_user.id != @blog.user.id
+      flash[:notice]="権限がありません"
+      redirect_to blogs_path
+    end
   end
 
 end
