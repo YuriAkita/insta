@@ -1,0 +1,14 @@
+<br>
+<h2>ログインする</h2>
+<div class="form_area">
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+  <%= f.label :メールアドレス,class:"post-area" %><br>
+  <%= f.email_field :email,class:"post-area" %><br>
+  <%= f.label :パスワード,class:"post-area" %><br>
+  <%= f.password_field :password,class:"post-area" %><br>
+  <%= f.submit "ログイン",class:"rogin-btn" %><br>
+<% end %>
+<br>
+<p>アカウントをお持ちではないですか？</p>
+<%= link_to "登録する", new_user_path %>
+</div>
