@@ -31,14 +31,18 @@
    height: 70px;
    font-size: 2rem;
    background-color: black;
-   width:100%;
-   position: relative;
  }
 
  .logo_image {
    float: left;
    padding: 5px;
  }
+
+  .header::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 
  footer {
    width: 100%;
