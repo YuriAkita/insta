@@ -1,11 +1,23 @@
-<br><br>
-<h1 class="clearfix"><%= @user.name %>のページ</h1>
 
-<div class="form_area">
+<div class="form_profile">
+  <br><br>
   <%= image_tag @user.profile_image.url,class:"rounded-circle",size: "200x200" %>
-<br>
+<br><br>
+<h1><%= @user.name %></h1>
   <% if @user.id == @current_user.id %>
     <%= link_to "プロフィール画像を変更する", edit_user_path(@user.id) %>
+    <br><br>
     <p>メールアドレス: <%= @user.email %></p>
   <% end %>
+</div>
+<div class="self_content">
+  <div class="title"><h2>All My Content.</h2></div>
+  <div class="d-flex align-content-start flex-wrap">
+  <% @user.blogs.each do |blog| %>
+  <div class="form_area">
+  <%= image_tag blog.image.url,size: "250x250" %><br>
+  <%= "content:"%><%= blog.content %><br>
+  </div>
+  <% end %>
+</div>
 </div>
