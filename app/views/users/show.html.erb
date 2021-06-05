@@ -1,0 +1,9 @@
+
+<h1><%= @user.name %>のページ</h1>
+
+<div class="form_area">
+<%= image_tag @user.profile_image.url,size: "200x200" %>
+<br>
+<%= link_to "プロフィール画像を変更する", edit_user_path(@user.id) %>
+<p>メールアドレス: <%= @user.email %></p>
+</div>
