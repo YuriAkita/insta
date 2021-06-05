@@ -1,4 +1,4 @@
-<br>
+<br><br>
 <h3>登録して友達の写真をチェックしよう</h3>
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -13,17 +13,17 @@
 
 <div class="form_area">
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :ユーザーネーム %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :メールアドレス %><br>
-  <%= f.email_field :email %><br>
-  <%= f.label :パスワード %><br>
-  <%= f.password_field :password %><br>
-  <%= f.label :確認パスワード %><br>
-  <%= f.password_field :password_confirmation %><br>
-  <%= f.label :プロフィール写真 %><br>
-  <%= f.file_field :profile_image %><br>
-  <%= f.submit "登録する" %><br>
+  <%= f.label :ユーザーネーム,class:"post-area" %><br>
+  <%= f.text_field :name,class:"post-area" %><br>
+  <%= f.label :メールアドレス,class:"post-area" %><br>
+  <%= f.email_field :email,class:"post-area" %><br>
+  <%= f.label :パスワード,class:"post-area" %><br>
+  <%= f.password_field :password,class:"post-area" %><br>
+  <%= f.label :確認パスワード,class:"post-area" %><br>
+  <%= f.password_field :password_confirmation,class:"post-area" %><br>
+  <%= f.label :プロフィール写真,class:"post-area" %><br>
+  <%= f.file_field :profile_image,class:"post-area" %><br>
+  <%= f.submit "登録する",class:"create-btn" %><br>
 <% end %>
 <br>
 <p>アカウントをお持ちですか？</p>
