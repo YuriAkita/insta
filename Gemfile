@@ -33,6 +33,10 @@ gem 'bcrypt'
 gem 'rexml'
 gem 'faker'
 
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.3'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
