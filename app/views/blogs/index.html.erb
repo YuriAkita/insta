@@ -4,22 +4,21 @@
 <%= link_to '新しく投稿を作成する', new_blog_path ,class:"create-btn"%><br>
 
 
-<div class="form_area">
+  <div class="d-flex align-content-start flex-wrap">
     <% @blogs.each do |blog| %>
-      <div>
-        <%= image_tag blog.image.url,size: "250x250" %><br>
-        <%= "content:"%><%= blog.content %><br>
-        <%= "user name:"%><%= blog.user.name %><br>
-        <%= link_to '詳細', blog %>
+    <div class="form_area">
+      <%= image_tag blog.image.url,size: "250x250" %><br>
+      <%= "content:"%><%= blog.content %><br>
+      <%= "user name:"%><%= blog.user.name %><br>
+      <%= link_to '詳細', blog_path(blog.id),class:"black-btn" %>
 
-        <% if blog.user.id == @current_user.id %>
-          <%= link_to '編集', edit_blog_path(blog) %>
-        <% end %>
+      <% if blog.user.id == @current_user.id %>
+        <%= link_to '編集', edit_blog_path(blog),class:"black-btn" %>
+      <% end %>
 
-        <% if blog.user.id == @current_user.id %>
-        <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>
+      <% if blog.user.id == @current_user.id %>
+      <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' } ,class:"black-btn"%>
+      <% end %>
+    </div>
     <% end %>
-
   </div>

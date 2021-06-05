@@ -1,8 +1,8 @@
-
-<h1><%= @user.name %>のページ</h1>
+<br><br>
+<h1 class="clearfix"><%= @user.name %>のページ</h1>
 
 <div class="form_area">
-  <%= image_tag @user.profile_image.url,size: "200x200" %>
+  <%= image_tag @user.profile_image.url,class:"rounded-circle",size: "200x200" %>
 <br>
   <% if @user.id == @current_user.id %>
     <%= link_to "プロフィール画像を変更する", edit_user_path(@user.id) %>

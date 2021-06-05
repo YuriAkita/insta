@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-    <%= form.file_field :image %>
-  </div>
+<div class="form_area">
+    <div class="field">
+      <%= form.label :image %>
+      <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+      <%= form.file_field :image %>
+    </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content,class:"post-area" %>
+    </div>
 
-  <div class="field">
-    <%= form.hidden_field :user_id %>
-  </div>
+    <div class="field">
+      <%= form.hidden_field :user_id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit class:"create-btn"%>
+    </div>
+  <% end %>
+</div>
