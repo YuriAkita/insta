@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def ensure_current_user
-    if @current_user.id != @blog.user.id
+    if @current_user.id != @user.id
       flash[:notice]="権限がありません"
       redirect_to blogs_path
     end
