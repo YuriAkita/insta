@@ -1,3 +1,4 @@
+<br><br>
 <h3>プロフィール画像の変更</h3>
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -10,14 +11,15 @@
     </ul>
   </div>
 <% end %>
+<div class="form_area">
+  <%= image_tag @user.profile_image.url,size: "200x200" %>
 
-<%= image_tag @user.profile_image.url,size: "200x200" %>
-
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :email %>
-  <%= f.hidden_field :password %>
-  <%= f.hidden_field :password_confirmation %>
-  <%= f.file_field :profile_image %><br>
-  <%= f.submit "登録する" %><br>
-<% end %>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :password %>
+    <%= f.hidden_field :password_confirmation %>
+    <%= f.file_field :profile_image %><br>
+    <%= f.submit "登録する",class:"create-btn" %><br>
+  <% end %>
+</div>
